@@ -2,19 +2,24 @@ Please fill in answers to the questions below:
 
 
 1. What's your name?
-
+Will Bridges
 
 2. Which VPS & domain providers did you choose?
-
+VPS: DigitalOcean
+Domain: Gandi.net
 
 3. What domain name did you register?
-
+willbridges.website
 
 4. What's the URL of your Github repository for this assignment?
-
+https://github.com/willpbridges/webdev
 
 5. Which parts of this assignment did you have trouble with, if any?
-
+The biggest headache was creating a user account on my web server.
+I followed the steps from the lecture notes, but the ssh-copy-id always
+failed with a "Permission denied (publickey)." I was stuck on this for a while
+until i just figured out a way to create a .ssh folder, copy the key from root,
+and change the permissions of the file.
 
 
 And here's a list of tasks for grading comments. Just leave this here:
