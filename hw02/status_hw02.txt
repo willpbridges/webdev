@@ -1,0 +1,53 @@
+Please fill in answers to the questions below:
+
+
+1. What's your name?
+Will Bridges
+
+2. What hostname did you deploy to?
+willbridges.website
+
+3. What's the link to your repository on github with your code?
+https://github.com/willpbridges/webdev
+
+4. How many HTML / CSS tutorial exercises did you do?
+All of them
+
+5. How comfortable do you feel with HTML and CSS now?
+Fairly comfortable. I have a much better understanding of CSS
+than I did a week ago.
+
+6. How many JS tutorial exercises did you do?
+I looked over most of the tutorials and exercises, but I
+just skimmed a lot of them because there were a lot of 
+basic programming tutorials.
+
+7. How comfortable do you feel with JS now?
+I feel more comfortable, but it will still take some getting
+used to. Dealing with scope and anonymous functions was an
+adjustment.
+
+8. Do all of your HTML pages pass the W3C HTML validator?
+(https://validator.w3.org/)
+No
+
+
+9. Which parts of this assignment did you have trouble with, if any?
+Trying to make every letter a different color with just a style
+tag in the head was tricky, but i ended up just making a custom
+class for each letter that only contained a color.
+
+I was able to figure out most of the logic for the calculator, but
+ran into trouble with a few edge cases, perhaps due to shortcomings
+of my program design.
+
+
+And here's a list of tasks for grading comments. Just leave this here:
+ - Task 1
+ - Task 2
+ - Task 3
+ - Task 4
+ - Task 5
+ - Task 6
+ - Task 7
+ - Task 8

@@ -1,0 +1,14 @@
+server {
+	listen 80;
+	listen [::]:80;
+
+	root /home/will/www/hw02.willbridges.website;
+
+	index index.html;
+
+	server_name hw02.willbridges.website www.hw02.willbridges.website;
+
+	location / {
+		try_files $uri $uri/ =404;
+	}
+}
