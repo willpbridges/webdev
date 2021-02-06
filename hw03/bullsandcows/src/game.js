@@ -1,4 +1,8 @@
-
+/**
+ * I used Prof. Tuck's Hangman lecture code as a starting point.
+ * I left some of his code here, such as uniq() and lives_left(), but I had
+ * to write a lot of new code to program the necessary logic for Bulls and Cows.
+ */
 export function uniq(xs) {
     return Array.from(new Set(xs));
 }

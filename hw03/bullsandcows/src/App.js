@@ -1,3 +1,13 @@
+/**
+ * I used Prof. Tuck's Hangman lecture code as a starting point.
+ * Most of the basic functions are taken from that code, but all
+ * the new logic required for Cows and Bulls is original code.
+ * For example, large portions of App() are the same as in the
+ * original code, but I had to make changes in how guesses are
+ * handled and how text is rendered. I also had to write my own
+ * function for randomly generating a 4-digit number and
+ * storing it in state.
+ */
 import { useState } from 'react';
 import {
   uniq, bad_guesses, word_view, lives_left, 
@@ -40,7 +50,6 @@ function App() {
   const [text, setText] = useState("");
   const [message, setMessage] = useState("Enter a unique 4-digit number");
 
-  let view = word_view(secret, guesses);
   let bads = bad_guesses(secret, guesses);
   let lives = lives_left(secret, guesses);
   let fullGuesses = []
@@ -60,7 +69,6 @@ function App() {
 
   function guess() {
     setText("");
-    console.log(secret);
     setMessage(get_message(text));
     let ng = uniq(guesses.concat(text));
     setGuesses(ng);
