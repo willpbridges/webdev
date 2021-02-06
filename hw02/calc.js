@@ -63,7 +63,7 @@
             default:
                 if (textField.value === "0") {
                     textField.value = button.id;
-                } else if (textField.value === "0.") {
+                } else if (currentValue.toString().includes(".")) {
                     textField.value += button.id;
                 } else if (currentValue === 0){
                     textField.value = button.id;
