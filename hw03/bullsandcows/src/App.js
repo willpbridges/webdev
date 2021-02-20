@@ -132,7 +132,7 @@ function App() {
         </button>
       </p>
       <h1>Lives: {lives + '\r\n'}</h1>
-      <h1>Guesses: {"\r\n" + fullGuesses.join("\r\n")}</h1>
+      <h1>Guesses: {"\r\n" + fullGuesses.join("\r\n\n")}</h1>
     </div>
   );
 }
