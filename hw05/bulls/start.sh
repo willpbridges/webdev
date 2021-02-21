@@ -15,7 +15,7 @@ export SECRET_KEY_BASE
 
 echo "Stopping old copy of app, if any..."
 
-_build/prod/rel/practice/bin/practice stop || true
+_build/prod/rel/bulls/bin/bulls stop || true
 
 echo "Starting app..."
 
