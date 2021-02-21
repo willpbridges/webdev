@@ -1,0 +1,37 @@
+Please fill in answers to the questions below:
+
+
+1. What's your name?
+Will Bridges
+
+2. What hostname did you deploy to?
+hw05.willbridges.website
+
+3. Which parts of this assignment did you have trouble with, if any?
+The biggest obstacle was getting my page to render after I began
+moving logic over to Elixir. I was getting a blank page for a while
+before I checked the console and realized I was missing an import
+and my view wasn't properly set up. I also ran into issues writing
+the browser logic because of state functions being undefined when
+the page loaded.
+
+4. What part of your application state is on the server?
+The server contains the secret and all relevant game information
+that the browser needs to render.
+
+5. What part of your application state, if any, is in the browser?
+The browser receives everything it needs to render the current game
+state. This includes the list of guesses, hints, the message to
+be rendered after a guess, and remaining lives. It never receives
+the secret from the server.
+
+
+And here's a list of tasks for grading comments. Just leave this here:
+ - Task 1
+ - Task 2
+ - Task 3
+ - Task 4
+ - Task 5
+ - Task 6
+ - Task 7
+ - Task 8

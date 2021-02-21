@@ -1,3 +1,6 @@
+// I used Prof. Tuck's lecture code for moving the
+// Hangman game logic into Elixir as starter code
+
 import React, { useState, useEffect } from 'react';
 import { ch_join, ch_push, ch_reset } from './socket';
 
@@ -54,12 +57,6 @@ function GameOver(props) {
 }
 
 function Controls({ guess, reset }) {
-    // WARNING: State in a nested component requires
-    // careful thought.
-    // If this component is ever unmounted (not shown
-    // in a render), the state will be lost.
-    // The default choice should be to put all state
-    // in your root component.
     const [text, setText] = useState("");
 
     function updateText(ev) {
