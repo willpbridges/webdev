@@ -17,6 +17,12 @@
   <%= error_tag f, :description %>
 </div>
 
+<div class="form-group">
+  <%= label f, :dateTime %>
+  <%= text_input f, :dateTime, id: "my-date-picker", class: "form-control" %>
+  <%= error_tag f, :dateTime %>
+</div>
+
   <div>
     <%= submit "Save", class: "btn btn-primary" %>
   </div>

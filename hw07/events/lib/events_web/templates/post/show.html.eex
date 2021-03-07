@@ -1,10 +1,16 @@
-<p>
-  <span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post) %></span>
-  <span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>
-</p>
+<br>
 
-<h1>Show Post <%= @post.name %></h1>
-
-<div>
-  <%= @post.description %>
+<div class="card border-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Event</div>
+    <h3 class="card-title"><%= @post.name %></h3>
+    <h4 class="card-body text"><%= @post.description %></h4>
+    <h4 class="card-body text">When it's happening:<br><%= @post.dateTime %></h4>
+  </div>
 </div>
+
+<br>
+
+<p>
+  <span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post), class: "btn btn-primary"  %></span>
+  <span><%= link "Back", to: Routes.post_path(@conn, :index), class: "btn btn-secondary"  %></span>
+</p>

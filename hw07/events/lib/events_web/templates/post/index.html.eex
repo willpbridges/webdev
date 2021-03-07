@@ -1,4 +1,5 @@
-<h1>Listing Posts</h1>
+<!--taken from Photo Blog lecture notes-->
+<h1>Listing Events</h1>
 
 <table class="table table-striped">
   <thead>
@@ -16,13 +17,17 @@
       <td><%= post.description %></td>
 
       <td>
-        <span><%= link "Show", to: Routes.post_path(@conn, :show, post) %></span>
-        <span><%= link "Edit", to: Routes.post_path(@conn, :edit, post) %></span>
-        <span><%= link "Delete", to: Routes.post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"] %></span>
+        <span><%= link "Show", to: Routes.post_path(@conn, :show, post),
+          class: "btn btn-secondary" %></span>
+        <span><%= link "Edit", to: Routes.post_path(@conn, :edit, post),
+          class: "btn btn-secondary"  %></span>
+        <span><%= link "Delete", to: Routes.post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"],
+          class: "btn btn-danger" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Post", to: Routes.post_path(@conn, :new) %></span>
+<span><%= link "New Post", to: Routes.post_path(@conn, :new),
+  class: "btn btn-primary" %></span>

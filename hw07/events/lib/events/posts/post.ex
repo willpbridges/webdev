@@ -5,6 +5,7 @@ defmodule Events.Posts.Post do
   schema "posts" do
     field :description, :string
     field :name, :string
+    field :dateTime, :string
     belongs_to :user, Events.Users.User
 
     timestamps()
@@ -13,7 +14,7 @@ defmodule Events.Posts.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:name, :description, :user_id])
-    |> validate_required([:name, :description, :user_id])
+    |> cast(attrs, [:name, :description, :dateTime, :user_id])
+    |> validate_required([:name, :description, :dateTime, :user_id])
   end
 end

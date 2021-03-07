@@ -1,3 +1,4 @@
+#taken from Photo Blog lecture notes
 defmodule EventsWeb.SessionController do
   use EventsWeb, :controller
 

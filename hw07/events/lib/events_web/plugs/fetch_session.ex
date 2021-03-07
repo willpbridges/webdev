@@ -1,3 +1,4 @@
+#taken from Photo Blog lecture notes
 defmodule EventsWeb.Plugs.FetchSession do
   import Plug.Conn
 

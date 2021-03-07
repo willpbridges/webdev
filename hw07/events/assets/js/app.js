@@ -13,3 +13,9 @@ import "../css/app.scss"
 //     import socket from "./socket"
 //
 import "phoenix_html"
+import flatpickr from 'flatpickr';
+
+flatpickr('#my-date-picker', {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+});

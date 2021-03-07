@@ -1,22 +1,24 @@
 <div class="row">
-  <div class="col">
+  <div class="col-my-2">
     <h1>Events Feed</h1>
-    <%= link "New Post", to: Routes.post_path(@conn, :new) %>
+    <h3>
+      <%= link "New Event", to: Routes.post_path(@conn, :new), class: "btn btn-primary" %>
+    </h3>
   </div>
 </div>
 
 <div class="row">
   <%= for post <- @posts do %>
     <div class="col-sm-4 card">
-      <!--
-      <img class="card-img-top" src="" alt="">
-      -->
+      <h3 class="card-header"><%= post.name %></h3>
       <div class="card-body">
-        <p class="card-title"><%=post.name%></p>
-        <p>Posted by <%= post.user.name %></p>
-        <p class="card-text"><%= post.description %></p>
-        <%= link "view", to: Routes.post_path(@conn, :show, post) %>
+        <h4 class="card-title">Hosted by <%= post.user.name %></h4>
+        <br>
+        <h5 class="card-text"><%= post.description %></h5>
+        <br>
+        <%= link "view", to: Routes.post_path(@conn, :show, post), class: "btn btn-secondary" %>
       </div>
+      <p class="card-footer">when: <%= post.dateTime %></p>
     </div>
   <% end %>
 </div>

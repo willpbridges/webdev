@@ -1,6 +1,19 @@
 /* This file is for your main application css. */
 @import "bootstrap";
+@import 'flatpickr';
 
 .invalid-feedback {
     display: block;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+td {
+    width: 20%;
+}
+
+table {
+    width: 80%;
 }

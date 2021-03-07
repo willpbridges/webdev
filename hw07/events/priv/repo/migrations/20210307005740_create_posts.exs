@@ -5,6 +5,7 @@ defmodule Events.Repo.Migrations.CreatePosts do
     create table(:posts) do
       add :name, :string, null: false
       add :description, :text, null: false
+      add :dateTime, :text, null: false
       add :user_id, references(:users), null: false
 
       timestamps()
