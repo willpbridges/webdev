@@ -13,6 +13,9 @@
     <main role="main" class="container">
      <div class="row">
         <div class="col my-2">
+          <p><a href="http://willbridges.website">Back to Will's Web Dev Homepage</p>
+        </div>
+        <div class="col my-2">
             <p><%= link "Home", to: Routes.page_path(@conn, :index, page: 1),
             class: "btn btn-primary" %></li>
         </div>
