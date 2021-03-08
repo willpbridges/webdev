@@ -30,6 +30,7 @@ export DATABASE_URL=ecto://events:$DB_PASS@localhost/events_prod
 
 mix ecto.create
 mix ecto.migrate
+mix ecto.reset
 
 npm install --prefix ./assets
 npm run deploy --prefix ./assets
