@@ -3,6 +3,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Email</th>
 
@@ -12,6 +13,7 @@
   <tbody>
 <%= for user <- @users do %>
     <tr>
+      <td><img src="<%= Routes.user_path(@conn, :photo, user.id) %>" alt=""></td>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
 

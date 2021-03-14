@@ -3,6 +3,8 @@
 <div class="card border-dark mb-3" style="max-width: 18rem;">
   <div class="card-header">Event</div>
     <h3 class="card-title"><%= @post.name %></h3>
+    <% src = Routes.user_path(@conn, :photo, @post.user.id) %>
+    <img class="card-img-top" src="<%= src %>" alt="">
     <h4 class="card-body text"><%= @post.description %></h4>
     <h4 class="card-body text">When it's happening:<br><%= @post.dateTime %></h4>
   </div>

@@ -3,12 +3,14 @@
 <table class="table table-striped" style="width:75%">
   <thead>
     <tr>
+      <th></th>
       <th>Name</th>
       <th>Email</th>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <td><img src="<%= Routes.user_path(@conn, :photo, @user.id) %>" alt=""></td>
       <td><%= @user.name %></td>
       <td><%= @user.email %></td>
     </tr>
