@@ -1,9 +1,11 @@
 <div class="row">
   <div class="col-my-2">
     <h1>Events Feed</h1>
-    <h3>
-      <%= link "New Event", to: Routes.post_path(@conn, :new), class: "btn btn-primary" %>
-    </h3>
+    <%= if have_current_user?(@conn) do %>
+      <h3>
+        <%= link "New Event", to: Routes.post_path(@conn, :new), class: "btn btn-primary" %>
+      </h3>
+    <% end %>
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 <br>
 
 <div class="card border-dark mb-3" style="max-width: 18rem;">
-  <div class="card-header">Event</div>
+  <div class="card-header"><%= @post.user.name %>'s Event</div>
     <h3 class="card-title"><%= @post.name %></h3>
     <% src = Routes.user_path(@conn, :photo, @post.user.id) %>
     <img class="card-img-top" src="<%= src %>" alt="">
@@ -13,6 +13,8 @@
 <br>
 
 <p>
-  <span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post), class: "btn btn-primary"  %></span>
+  <%= if current_user_id?(@conn, @post.user_id) do %>
+    <span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post), class: "btn btn-primary"  %></span>
+  <% end %>
   <span><%= link "Back", to: Routes.post_path(@conn, :index), class: "btn btn-secondary"  %></span>
 </p>

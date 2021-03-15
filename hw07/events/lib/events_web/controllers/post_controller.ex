@@ -3,6 +3,31 @@ defmodule EventsWeb.PostController do
 
   alias Events.Posts
   alias Events.Posts.Post
+  alias EventsWeb.Plugs
+  plug Plugs.RequireUser when action in [:new, :edit, :create, :update]
+
+  plug :fetch_post when action in [:show, :edit, :update, :delete]
+  plug :require_owner when action in [:edit, :update, :delete]
+
+  def fetch_post(conn, _args) do
+    id = conn.params["id"]
+    post = Posts.get_post!(id)
+    assign(conn, :post, post)
+  end
+
+  def require_owner(conn, _args) do
+    user = conn.assigns[:current_user]
+    post = conn.assigns[:post]
+
+    if user.id == post.user_id do
+      conn
+    else
+      conn
+      |> put_flash(:error, "That isn't yours.")
+      |> redirect(to: Routes.page_path(conn, :index))
+      |> halt()
+    end
+  end
 
   def index(conn, _params) do
     posts = Posts.list_posts()
@@ -29,19 +54,19 @@ defmodule EventsWeb.PostController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    post = Posts.get_post!(id)
+  def show(conn, %{"id" => _id}) do
+    post = conn.assigns[:post]
     render(conn, "show.html", post: post)
   end
 
-  def edit(conn, %{"id" => id}) do
-    post = Posts.get_post!(id)
+  def edit(conn, %{"id" => _id}) do
+    post = conn.assigns[:post]
     changeset = Posts.change_post(post)
     render(conn, "edit.html", post: post, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "post" => post_params}) do
-    post = Posts.get_post!(id)
+  def update(conn, %{"id" => _id, "post" => post_params}) do
+    post = conn.assigns[:post]
 
     case Posts.update_post(post, post_params) do
       {:ok, post} ->
@@ -54,8 +79,8 @@ defmodule EventsWeb.PostController do
     end
   end
 
-  def delete(conn, %{"id" => id}) do
-    post = Posts.get_post!(id)
+  def delete(conn, %{"id" => _id}) do
+    post = conn.assigns[:post]
     {:ok, _post} = Posts.delete_post(post)
 
     conn
