@@ -23,6 +23,7 @@ defmodule EventsWeb.Router do
     get "/users/photo/:id", UserController, :photo
     resources "/sessions", SessionController,
       only: [:create, :delete], singleton: true
+    resources "/comments", CommentController
   end
 
   # Other scopes may use custom stacks.

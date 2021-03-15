@@ -3,6 +3,7 @@ defmodule EventsWeb.PostController do
 
   alias Events.Posts
   alias Events.Posts.Post
+  alias Events.Comments
   alias EventsWeb.Plugs
   plug Plugs.RequireUser when action in [:new, :edit, :create, :update]
 
@@ -55,8 +56,13 @@ defmodule EventsWeb.PostController do
   end
 
   def show(conn, %{"id" => _id}) do
-    post = conn.assigns[:post]
-    render(conn, "show.html", post: post)
+    post = Posts.load_comments(conn.assigns[:post])
+    comm = %Comments.Comment{
+      post_id: post.id,
+      user_id: current_user_id(conn)
+    }
+    new_comment = Comments.change_comment(comm)
+    render(conn, "show.html", post: post, new_comment: new_comment)
   end
 
   def edit(conn, %{"id" => _id}) do
